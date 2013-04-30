@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<!--
+       Licensed to the Apache Software Foundation (ASF) under one
+       or more contributor license agreements.  See the NOTICE file
+       distributed with this work for additional information
+       regarding copyright ownership.  The ASF licenses this file
+       to you under the Apache License, Version 2.0 (the
+       "License"); you may not use this file except in compliance
+       with the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing,
+       software distributed under the License is distributed on an
+       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+       KIND, either express or implied.  See the License for the
+       specific language governing permissions and limitations
+       under the License.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+        <script type="text/javascript" src="cordova-2.5.0.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type ="text/html" src="test/test.html"></script>
+        <script type="text/javascript">
+            function delayer() {
+                window.location="test://test.html/"
+            }
+
+            function loadXMLDoc() {
+                var xmlhttp;
+                var txt, x, i;
+                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        xmlDoc = xmlhttp.responseXML;
+                        txt = "";
+                        x = xmlDoc.getElementsByTagName("displayName");
+                        for (i = 0; i < x.length; i++) {
+                            txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+                        }
+                        document.getElementById("myDiv").innerHTML = txt;
+                    }
+                }
+                xmlhttp.open("GET", "http://10.10.1.63:8080/catie/services/Menu/viewMainMenu?roomNumber=101&ipaddress=10.10.1.63", true);
+                xmlhttp.send();
+
+            }
+            function loadiconDoc() {
+                var xmlhttp;
+                var txt, x, i;
+                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        xmlDoc = xmlhttp.responseXML;
+                        txt = "";
+                        x = xmlDoc.getElementsByTagName("menuId");
+                        for (i = 0; i < x.length; i++) {
+                            txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+                        }
+                        document.getElementById("myDiv").innerHTML = txt;
+                    }
+                }
+                xmlhttp.open("GET", "http://10.10.1.63:8080/catie/services/Menu/viewMainMenu?roomNumber=101&ipaddress=10.10.1.63", true);
+                xmlhttp.send();
+
+            }
+            function loadgreenDoc() {
+                var xmlhttp;
+                var txt, x, i;
+                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        xmlDoc = xmlhttp.responseXML;
+                        txt = "";
+                        x = xmlDoc.getElementsByTagName("refName");
+                        for (i = 0; i < x.length; i++) {
+                            txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+                        }
+                        document.getElementById("myDiv").innerHTML = txt;
+                    }
+                }
+                xmlhttp.open("GET", "http://10.10.1.63:8080/catie/services/Menu/viewMainMenu?roomNumber=101&ipaddress=10.10.1.63", true);
+                xmlhttp.send();
+
+            }
+            function loaddocdining() {
+                var xmlhttp;
+                var txt, x, i;
+                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        xmlDoc = xmlhttp.responseXML;
+                        txt = "";
+                        x = xmlDoc.getElementsByTagName("sponsorType");
+                        for (i = 0; i < x.length; i++) {
+                            txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+                        }
+                        document.getElementById("myDiv").innerHTML = txt;
+                    }
+                }
+                xmlhttp.open("GET", "http://10.10.1.63:8080/catie/services/Menu/viewMainMenu?roomNumber=101&ipaddress=10.10.1.63", true);
+                xmlhttp.send();
+
+            }
+          
+           
+
+          </script>
+                 
+    
+            <style type="text/css">
+           #Button2 {
+                width: 108px;
+                height: 25px;
+            }
+            #Button3 {
+                width: 119px;
+                height: 24px;
+            }
+            #Button4 {
+                width: 113px;
+                height: 26px;
+            }
+            #Button1 {
+                width: 125px;
+                height: 25px;
+                margin-left: 0px;
+            }
+            </style>
+           <style type ="text/css">
+
+               #main { height:200px; width:300px; border:#666666 5px double; }
+
+#main div.current { z-index:2; }
+
+#main div { position:absolute; z-index:0; }
+
+               #main div.prev {
+                   z-index: 1;
+               }
+           </style>
+      
+    </head>
+    <body style="background-color:rosybrown;">
+        
+        <marquee behavior="scroll" direction="left"><img border="5" src="test/pulpit.jpg" alt="Pulpit rock" width="304" height="228"><img border="5" src="img/dinning details.jpg" alt="Pulpit rock" width="304" height="228"><img border="5" src="img/Greenpage.jpg" alt="Pulpit rock" width="304" height="228"><img border="5" src="img/videogallery.jpg" alt="Pulpit rock" width="304" height="228"><img border="5" src="img/test.jpg" alt="Pulpit rock" width="304" height="228"></marquee>!>
+           
+   
+
+      <h2><center>CATIE</center></h2>
+        <form border="5">
+            <table border="10" align="center" bordercolor="#ff033" cellspacing="8" cellpadding="8" bgcolor="#ff6666">
+                <tr>
+                    <th>
+                          <img border="0" src="img/videogallery.jpg" width="120" height="50" /><br />
+                         <a href="test\test1.html">Video gallery</a>
+                        
+                    </th>
+                    <th>
+                         <img border="0" src="img/Greenpage.jpg" width="100" height="50" /><br />
+                          <a href="test\test.html">Green Page</a>
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+ <img border="0" src="img/dinning details.jpg" width="100" height="50" /><br />
+<a href ="test\test3.html">Dinning details</a>
+                    </th>
+                    <th>
+<img border="0" src="test/pulpit.jpg" width="100" height="50" />
+                        <a href ="test\test4.html">Photo gallery</a>
+
+                    </th>
+                </tr>
+
+            </table>
+           
+          
+        
+<div id="myDiv"></div>
+        
+        <p>
+          
+      
+    </body>
+</html>

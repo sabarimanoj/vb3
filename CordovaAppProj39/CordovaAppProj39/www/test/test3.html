@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function loadXMLDoc()
+{
+var xmlhttp;
+var txt,x,i;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    xmlDoc=xmlhttp.responseXML;
+    txt="";
+    x=xmlDoc.getElementsByTagName("refName");
+    for (i=0;i<x.length;i++)
+      {
+      txt=txt + x[i].childNodes[0].nodeValue + "<br>";
+      }
+    document.getElementById("mydiv").innerHTML=txt;
+    }
+  }
+xmlhttp.open("GET","http://10.10.1.63:8080/catie/services/Menu/viewMainMenu?roomNumber=101&ipaddress=10.10.1.63",true);
+xmlhttp.send();
+}
+
+</script>
+        </HEAD>
+        <body style="background-color:lightcyan">
+
+           <h2><center>E2INFOSYSTEMS</center></h2>
+            <div id="mydiv"></div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type ="button"style="width:250px;height:150px;font:50px"; onclick="loadXMLDoc()"value="CLICK" /> <br /><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../index.html">HOME</a>
+           
+        </body>
+        
+  
+</html>
